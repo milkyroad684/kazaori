@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "追い風",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 1,
+    "leaves": [[3, 4]],
+    "holes": [[6, 4]],
+    "walls": [],
+    "thorns": [],
+    "fixedFans": []
+  },
+  {
+    "id": 2,
+    "name": "曲がり角",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 2,
+    "leaves": [[2, 5]],
+    "holes": [[5, 2]],
+    "walls": [[6, 2], [6, 3], [6, 4], [6, 5], [4, 2], [4, 3]],
+    "thorns": [],
+    "fixedFans": []
+  },
+  {
+    "id": 3,
+    "name": "向かい風",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 1,
+    "leaves": [[4, 4]],
+    "holes": [[6, 4]],
+    "walls": [],
+    "thorns": [],
+    "fixedFans": [{ "x": 8, "y": 4, "dir": "L" }]
+  },
+  {
+    "id": 4,
+    "name": "風の継ぎ手",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 3,
+    "leaves": [[2, 4]],
+    "holes": [[8, 2]],
+    "walls": [],
+    "thorns": [[6, 4], [7, 4], [5, 1]],
+    "fixedFans": [{ "x": 9, "y": 3, "dir": "L" }]
+  },
+  {
+    "id": 5,
+    "name": "雁行",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 3,
+    "leaves": [[2, 2], [2, 6]],
+    "holes": [[5, 4]],
+    "walls": [],
+    "thorns": [[5, 2], [5, 6]],
+    "fixedFans": []
+  },
+  {
+    "id": 6,
+    "name": "逆風の門",
+    "width": 10,
+    "height": 8,
+    "fanBudget": 5,
+    "leaves": [[2, 4]],
+    "holes": [[8, 4]],
+    "walls": [],
+    "thorns": [[8, 3], [8, 5]],
+    "fixedFans": [{ "x": 9, "y": 4, "dir": "L" }]
+  }
+]

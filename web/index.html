@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>カゼオリ — Kazaori</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>カゼオリ <span class="en">Kazaori</span></h1>
+        <p class="subtitle">離散格子の風パズル。ファンを置いて、葉を渦穴へ導く。</p>
+      </header>
+
+      <div class="controls">
+        <label class="control-group">
+          <span class="ctl-label">レベル</span>
+          <select id="level-select"></select>
+        </label>
+        <div class="control-group">
+          <span class="ctl-label">ファン</span>
+          <span class="counter"><span id="fan-count">0</span> / <span id="fan-budget">0</span></span>
+        </div>
+        <div class="control-group">
+          <span class="ctl-label">向き</span>
+          <div class="dir-picker">
+            <button class="dir-btn" data-dir="U" title="北 (Up)">↑</button>
+            <button class="dir-btn" data-dir="R" title="東 (Right)">→</button>
+            <button class="dir-btn" data-dir="D" title="南 (Down)">↓</button>
+            <button class="dir-btn" data-dir="L" title="西 (Left)">←</button>
+          </div>
+        </div>
+        <div class="control-group action-group">
+          <button id="run-btn">▶ 実行</button>
+          <button id="reset-btn">⟲ リセット</button>
+        </div>
+      </div>
+
+      <div class="board-wrap">
+        <canvas id="board"></canvas>
+      </div>
+
+      <div class="result" id="result" aria-live="polite"></div>
+
+      <section class="help">
+        <h2>遊び方</h2>
+        <ul>
+          <li>上の<strong>向き</strong>を選び、空セルをクリックすると<strong>ファン</strong>が配置されます。</li>
+          <li>配置済みファンをクリックすると<strong>撤去</strong>できます（向きを変えたいときは撤去してから置き直し）。</li>
+          <li>ファンは前方に <strong>3 / 2 / 1</strong> の強さで風を送ります。風はファン・壁・盤外で止まります。</li>
+          <li>葉は毎ターン、立っているセルの<strong>合計風</strong>の主な向きへ 1 マス進みます。同じ強さの直交合成では止まります（干渉ロック）。</li>
+          <li><strong>渦穴</strong>(●)に入れば成功、<strong>茨</strong>(▲)に触れたら失敗です。</li>
+        </ul>
+        <p class="legend">
+          凡例:
+          <span class="lg lg-wall">■</span>壁
+          <span class="lg lg-hole">●</span>渦穴
+          <span class="lg lg-thorn">▲</span>茨
+          <span class="lg lg-fan-fixed">▶</span>固定ファン
+          <span class="lg lg-fan-placed">▶</span>配置ファン
+          <span class="lg lg-leaf">●</span>葉
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          <a href="https://github.com/" id="repo-link" target="_blank" rel="noopener">ソース (GitHub)</a>
+          ・MIT License
+        </p>
+      </footer>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
